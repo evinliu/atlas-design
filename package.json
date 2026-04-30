@@ -8,10 +8,10 @@
 		"pnpm": "10.26.0"
 	},
 	"scripts": {
-		"dev": "pnpm --filter @atlas-design/play dev",
-		"docs:dev": "pnpm -filter @atlas-design/docs dev",
-		"docs:build": "pnpm -filter @atlas-design/docs build",
-		"story": "pnpm -filter @atlas-design/play storybook",
+		"dev": "pnpm run build && pnpm --filter @atlas-design/play dev",
+		"story": "pnpm run build && pnpm --filter @atlas-design/play storybook",
+		"docs:dev": "pnpm --filter @atlas-design/docs dev",
+		"docs:build": "pnpm --filter @atlas-design/docs build",
 		"test": "pnpm --filter @atlas-design/components test",
 		"test:ui": "pnpm --filter @atlas-design/components test:ui",
 		"test:run": "pnpm --filter @atlas-design/components test:run",

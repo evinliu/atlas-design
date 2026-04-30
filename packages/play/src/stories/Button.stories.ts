@@ -1,7 +1,4 @@
 import type { ArgTypes, Meta, StoryObj } from '@storybook/vue3-vite';
-// import { ErButton, ErButtonGroup } from "eric-ui";
-// import "eric-ui/dist/theme/Button.css";
-
 import { ErButton, ErButtonGroup } from 'atlas-design';
 import { expect, fn, userEvent, within } from 'storybook/test';
 import '@atlas-design/components/Button/style.css';

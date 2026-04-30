@@ -11,9 +11,7 @@ const handleClick = () => {
 </script>
 
 <template>
-	<er-button @click="handleClick" size="small" type="primary" :loading="buttonLoading" icon="search"
-		>你好呀</er-button
-	>
+	<er-button @click="handleClick" size="small" type="primary" :loading="buttonLoading" icon="search">你好呀</er-button>
 </template>
 
 <style scoped></style>
