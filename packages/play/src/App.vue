@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+
 const buttonLoading = ref(false);
-const handleClick = (e: MouseEvent) => {
-	console.log(e);
+const handleClick = () => {
 	buttonLoading.value = true;
 	setTimeout(() => {
 		buttonLoading.value = false;

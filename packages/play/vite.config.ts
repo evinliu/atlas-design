@@ -13,7 +13,7 @@ import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import { playwright } from '@vitest/browser-playwright';
 import AutoImport from 'unplugin-auto-import/vite';
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 
 const dirname =
 	typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
@@ -54,12 +54,20 @@ export default defineConfig({
 		}),
 	],
 	resolve: {
-		alias: {
-			'@': resolve(__dirname, 'src'),
-			// 开发阶段把 atlas-design 指向源码
-			// 'atlas-design': resolve(__dirname, '../core/index.ts'),
-			// '@atlas-design/components': resolve(__dirname, '../components/index.ts'),
-		},
+		alias: [
+			{
+				find: 'atlas-design/dist/index.css',
+				replacement: resolve(__dirname, '../theme/index.css'),
+			},
+			{ find: 'atlas-design', replacement: resolve(__dirname, '../core/index.ts') },
+			{
+				find: '@atlas-design/components',
+				replacement: resolve(__dirname, '../components/index.ts'),
+			},
+			{ find: '@atlas-design/theme', replacement: resolve(__dirname, '../theme') },
+			{ find: '@atlas-design/utils', replacement: resolve(__dirname, '../utils/index.ts') },
+			{ find: '@', replacement: resolve(__dirname, 'src') },
+		],
 	},
 	optimizeDeps: {
 		// 告诉 Vite 不要去预构建这些本地包（否则仍然会去动 dist）

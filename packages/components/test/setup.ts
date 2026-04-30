@@ -20,4 +20,3 @@ if (typeof window !== 'undefined' && !window.matchMedia) {
 		dispatchEvent: () => false,
 	});
 }
-

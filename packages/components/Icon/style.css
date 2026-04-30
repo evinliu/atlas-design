@@ -9,8 +9,22 @@
 	font-size: inherit;
 }
 
-@each $val in primary, success, warning, danger, info {
-	.er-icon--$(val) {
-		--er-icon-color: var(--er-color-$(val));
-	}
+.er-icon--primary {
+	--er-icon-color: var(--er-color-primary);
+}
+
+.er-icon--success {
+	--er-icon-color: var(--er-color-success);
+}
+
+.er-icon--warning {
+	--er-icon-color: var(--er-color-warning);
+}
+
+.er-icon--danger {
+	--er-icon-color: var(--er-color-danger);
+}
+
+.er-icon--info {
+	--er-icon-color: var(--er-color-info);
 }

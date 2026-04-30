@@ -6,8 +6,8 @@ import ButtonGroup from './ButtonGroup.vue';
 import type { ButtonSize, ButtonType } from './types';
 
 describe('Button.vue', () => {
-	const onClick = vi.fn();
 	test('basic button', async () => {
+		const onClick = vi.fn();
 		const wrapper = mount(() => (
 			<Button type="primary" {...{ onClick }}>
 				button content
@@ -26,6 +26,7 @@ describe('Button.vue', () => {
 	});
 
 	test('disabled button', async () => {
+		const onClick = vi.fn();
 		const wrapper = mount(() => (
 			<Button disabled {...{ onClick }}>
 				disabled button
@@ -41,7 +42,7 @@ describe('Button.vue', () => {
 
 		// events
 		await wrapper.get('button').trigger('click');
-		expect(onClick).toHaveBeenCalledOnce();
+		expect(onClick).not.toHaveBeenCalled();
 		expect(wrapper.emitted('click')).toBeUndefined();
 	});
 
@@ -52,11 +53,6 @@ describe('Button.vue', () => {
 			},
 			slots: {
 				default: 'loading button',
-			},
-			global: {
-				components: {
-					ErIcon: Icon,
-				},
 			},
 		});
 
@@ -93,14 +89,11 @@ describe('Button.vue', () => {
 			slots: {
 				default: 'icon button',
 			},
-			global: {
-				stubs: ['ErIcon'],
-			},
 		});
 
 		const iconElement = wrapper.findComponent(Icon);
 		expect(iconElement.exists()).toBeTruthy();
-		expect(iconElement.attributes('icon')).toBe('arrow-up');
+		expect(iconElement.props('icon')).toBe('arrow-up');
 	});
 
 	// Props: type
@@ -135,9 +128,6 @@ describe('Button.vue', () => {
 	])('should has the correct class when prop %s is set to true', (prop, className) => {
 		const wrapper = mount(Button, {
 			props: { [prop]: true },
-			global: {
-				stubs: ['ErIcon'],
-			},
 		});
 		expect(wrapper.classes()).toContain(className);
 	});
@@ -189,11 +179,6 @@ describe('Button.vue', () => {
 	it('should display loading icon and not emit click event when button is loading', async () => {
 		const wrapper = mount(Button, {
 			props: { loading: true },
-			global: {
-				components: {
-					ErIcon: Icon,
-				},
-			},
 		});
 		const iconElement = wrapper.findComponent(Icon);
 

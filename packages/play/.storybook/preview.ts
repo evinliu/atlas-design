@@ -1,9 +1,8 @@
 import { setup, type Preview } from '@storybook/vue3-vite';
-// 导入 vuelix 以初始化 fontawesome 和注册所有组件
-import vuelix from 'vuelix';
+import atlasDesign from 'atlas-design';
 
 setup((app) => {
-	app.use(vuelix); // 这会注册所有组件，包括 ErIcon
+	app.use(atlasDesign);
 });
 
 const preview: Preview = {

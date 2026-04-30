@@ -9,6 +9,7 @@ import {
 	type Slot,
 } from 'vue';
 import { throttle } from 'lodash-es';
+import ErIcon from '../Icon/Icon.vue';
 import { BUTTON_GROUP_CONTEXT_KEY } from './contants';
 import type { ButtonGroupContext, ButtonInstance, ButtonProps } from './types';
 
@@ -32,7 +33,8 @@ const props = withDefaults(defineProps<ButtonProps>(), {
 	throttleDuration: 500,
 });
 
-const context = inject<ComputedRef<ButtonGroupContext>>(BUTTON_GROUP_CONTEXT_KEY);
+const defaultContext = computed<ButtonGroupContext>(() => ({}));
+const context = inject<ComputedRef<ButtonGroupContext>>(BUTTON_GROUP_CONTEXT_KEY, defaultContext);
 
 // 辅助函数：从 context 或 props 中获取属性值，优先使用 context
 const getContextProp = <K extends keyof ButtonGroupContext>(
@@ -116,10 +118,10 @@ defineExpose<ButtonInstance>({
 	>
 		<template v-if="loading">
 			<slot name="loading">
-				<er-icon class="loading-icon" :icon="resolvedLoadingIcon" :style="iconStyle" spin />
+				<ErIcon class="loading-icon" :icon="resolvedLoadingIcon" :style="iconStyle" spin />
 			</slot>
 		</template>
-		<er-icon v-if="icon && !loading" :icon="icon" :style="iconStyle" size="1x" />
+		<ErIcon v-if="icon && !loading" :icon="icon" :style="iconStyle" size="1x" />
 		<slot></slot>
 	</component>
 </template>
