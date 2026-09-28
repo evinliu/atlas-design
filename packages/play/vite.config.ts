@@ -55,18 +55,10 @@ export default defineConfig({
 	],
 	resolve: {
 		alias: [
-			{
-				find: 'atlas-design/dist/index.css',
-				replacement: resolve(__dirname, '../theme/index.css'),
-			},
-			{ find: 'atlas-design', replacement: resolve(__dirname, '../core/index.ts') },
-			{
-				find: '@atlas-design/components',
-				replacement: resolve(__dirname, '../components/index.ts'),
-			},
-			{ find: '@atlas-design/theme', replacement: resolve(__dirname, '../theme') },
-			{ find: '@atlas-design/utils', replacement: resolve(__dirname, '../utils/index.ts') },
 			{ find: '@', replacement: resolve(__dirname, 'src') },
+			{ find: 'atlas-design', replacement: resolve(__dirname, '../core/index.ts') },
+			{ find: '@atlas-design/components', replacement: resolve(__dirname, '../components') },
+			{ find: /^@atlas-design\/theme\/(.*)/, replacement: resolve(__dirname, '../theme/$1') },
 		],
 	},
 	optimizeDeps: {

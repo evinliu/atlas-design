@@ -12,12 +12,13 @@ coverage
 dist
 dist-ssr
 *.local
+*.tsbuildinfo
 
 /cyperss/videos/
 /cypress/srceenshots/
 
-.vitepress/dist
-.vitepress/cache
+**/.vitepress/dist
+**/.vitepress/cache
 
 # Auto-import generated files
 auto-imports.d.ts

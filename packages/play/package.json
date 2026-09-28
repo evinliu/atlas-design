@@ -11,7 +11,11 @@
 		"build-storybook": "storybook build"
 	},
 	"dependencies": {
-		"vue": "^3.5.33"
+		"@atlas-design/components": "workspace:*",
+		"@atlas-design/theme": "workspace:*",
+		"@atlas-design/utils": "workspace:*",
+		"atlas-design": "workspace:*",
+		"vue": "catalog:"
 	},
 	"devDependencies": {
 		"@chromatic-com/storybook": "^5.1.2",
@@ -20,13 +24,14 @@
 		"@storybook/addon-onboarding": "^10.3.6",
 		"@storybook/addon-vitest": "^10.3.6",
 		"@storybook/vue3-vite": "^10.3.6",
-		"@vitejs/plugin-vue": "^6.0.3",
-		"@vitejs/plugin-vue-jsx": "^5.1.2",
+		"@vitejs/plugin-vue": "catalog:",
+		"@vitejs/plugin-vue-jsx": "catalog:",
 		"@vitest/browser-playwright": "^4.0.16",
-		"@vitest/coverage-v8": "^4.0.16",
+		"@vitest/coverage-v8": "catalog:",
 		"playwright": "^1.57.0",
 		"storybook": "^10.3.6",
-		"typescript": "^5.9.3",
-		"vue-tsc": "^3.2.7"
+		"typescript": "catalog:",
+		"unplugin-auto-import": "catalog:",
+		"vue-tsc": "catalog:"
 	}
 }

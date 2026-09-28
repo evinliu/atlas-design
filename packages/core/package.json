@@ -15,6 +15,7 @@
 	"exports": {
 		".": {
 			"types": "./dist/types/core/index.d.ts",
+			"development": "./index.ts",
 			"import": "./dist/es/index.js",
 			"require": "./dist/umd/index.umd.cjs"
 		},
@@ -34,11 +35,11 @@
 	"license": "ISC",
 	"packageManager": "pnpm@10.26.0",
 	"dependencies": {
-		"@fortawesome/fontawesome-svg-core": "^7.1.0",
-		"@fortawesome/free-brands-svg-icons": "^7.1.0",
-		"@fortawesome/free-regular-svg-icons": "^7.1.0",
-		"@fortawesome/free-solid-svg-icons": "^7.1.0",
-		"@fortawesome/vue-fontawesome": "^3.1.2",
+		"@fortawesome/fontawesome-svg-core": "catalog:",
+		"@fortawesome/free-brands-svg-icons": "catalog:",
+		"@fortawesome/free-regular-svg-icons": "catalog:",
+		"@fortawesome/free-solid-svg-icons": "catalog:",
+		"@fortawesome/vue-fontawesome": "catalog:",
 		"@popperjs/core": "^2.11.8",
 		"async-validator": "^4.2.5"
 	},
@@ -46,9 +47,11 @@
 		"@atlas-design/components": "workspace:*",
 		"@atlas-design/theme": "workspace:*",
 		"@atlas-design/utils": "workspace:*",
+		"move-file-cli": "catalog:",
+		"rimraf": "catalog:",
 		"vite-plugin-dts": "^4.5.4"
 	},
 	"peerDependencies": {
-		"vue": "^3.5.33"
+		"vue": "catalog:"
 	}
 }

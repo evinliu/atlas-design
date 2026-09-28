@@ -1,11 +1,10 @@
 import { resolve } from 'path';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
-import type { PluginOption } from 'vite';
-import { defineConfig } from 'vitest/config';
+import { defineConfig, type Plugin } from 'vitest/config';
 
 export default defineConfig({
-	plugins: [vue(), vueJsx()] as PluginOption[],
+	plugins: [vue(), vueJsx()] as Plugin[],
 	test: {
 		environment: 'jsdom',
 		globals: true,

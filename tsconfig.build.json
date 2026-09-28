@@ -17,6 +17,7 @@
 		"paths": {
 			"atlas-design": ["packages/core/index.ts"],
 			"@atlas-design/components": ["packages/components/index.ts"],
+			"@atlas-design/components/*": ["packages/components/*"],
 			"@atlas-design/theme/*": ["packages/theme/*"],
 			"@atlas-design/utils": ["packages/utils/index.ts"],
 			"@atlas-design/utils/*": ["packages/utils/*"]

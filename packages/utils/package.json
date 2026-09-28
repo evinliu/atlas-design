@@ -2,9 +2,16 @@
 	"name": "@atlas-design/utils",
 	"version": "1.0.0",
 	"private": true,
-	"description": "",
 	"main": "./index.ts",
+	"module": "./index.ts",
 	"types": "./index.ts",
+	"exports": {
+		".": {
+			"types": "./index.ts",
+			"import": "./index.ts"
+		},
+		"./*": "./*"
+	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
@@ -16,6 +23,6 @@
 		"fp-ts": "^2.16.11"
 	},
 	"peerDependencies": {
-		"vue": "^3.5.33"
+		"vue": "catalog:"
 	}
 }

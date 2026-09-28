@@ -1,6 +1,12 @@
 {
   "extends": "@tsconfig/node18/tsconfig.json",
-  "include": ["packages/**/**.config.ts"],
+  "include": [
+    "vite.config.ts",
+    "packages/**/*.config.ts",
+    "packages/**/*.config.mts",
+    "packages/**/*.config.cjs",
+    "packages/core/build/**/*.ts"
+  ],
   "compilerOptions": {
     "composite": true,
     "module": "ESNext",

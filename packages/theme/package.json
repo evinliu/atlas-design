@@ -2,8 +2,13 @@
 	"name": "@atlas-design/theme",
 	"version": "1.0.0",
 	"private": true,
-	"description": "",
-	"main": "index.css",
+	"main": "./index.css",
+	"style": "./index.css",
+	"exports": {
+		".": "./index.css",
+		"./index.css": "./index.css",
+		"./*": "./*"
+	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},

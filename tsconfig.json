@@ -19,6 +19,7 @@
 		"paths": {
 			"atlas-design": ["packages/core/index.ts"],
 			"@atlas-design/components": ["packages/components/index.ts"],
+			"@atlas-design/components/*": ["packages/components/*"],
 			"@atlas-design/theme/*": ["packages/theme/*"],
 			"@atlas-design/utils": ["packages/utils/index.ts"],
 			"@atlas-design/utils/*": ["packages/utils/*"]
@@ -30,5 +31,14 @@
 		"noUnusedParameters": true,
 		"noFallthroughCasesInSwitch": true
 	},
-	"include": ["packages/**/*.ts", "packages/**/*.tsx", "packages/**/*.vue", "auto-imports.d.ts"]
+	"include": ["packages/**/*.ts", "packages/**/*.tsx", "packages/**/*.vue", "auto-imports.d.ts"],
+	"exclude": [
+		"node_modules",
+		"dist",
+		"**/*.config.ts",
+		"**/*.config.mts",
+		"**/*.config.cjs",
+		"packages/core/build/**"
+	],
+	"references": [{ "path": "./tsconfig.node.json" }]
 }

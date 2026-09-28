@@ -7,7 +7,6 @@
 		"src/**/*.ts",
 		"src/**/*.tsx",
 		"src/**/*.vue",
-		"src/stories/**/*.ts",
 		".storybook/**/*.ts",
 		"vite.config.ts",
 		"vitest.shims.d.ts"

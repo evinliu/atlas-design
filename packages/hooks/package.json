@@ -3,9 +3,21 @@
 	"version": "1.0.0",
 	"private": true,
 	"description": "",
-	"main": "index.js",
+	"main": "./index.ts",
+	"module": "./index.ts",
+	"types": "./index.ts",
+	"exports": {
+		".": {
+			"types": "./index.ts",
+			"import": "./index.ts"
+		},
+		"./*": "./*"
+	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"peerDependencies": {
+		"vue": "catalog:"
 	},
 	"keywords": [],
 	"author": "",
